@@ -1,0 +1,16 @@
+.nav{
+    text-align: center;
+}
+.nav a{
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+}
+.nav a:hover{
+    background: rgba(0, 0, 0, 0.123);
+}

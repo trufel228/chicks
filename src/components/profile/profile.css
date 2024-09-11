@@ -1,0 +1,52 @@
+.profile .me{
+    display: flex;
+    background: url(../../img/bg.jpg) center/cover no-repeat;
+    border-radius: 20px;
+    transform: scale(1.025) translateY(-10px);
+    border: 3px solid #000;
+    padding: 30px;
+    align-items: center;
+}
+.profile .avatar{
+    border-radius: 50%;
+    height: 180px;
+}
+.profile .me h2{
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 2px 1px #000;
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.5s;
+}
+/* .profile .name h2 span:hover{
+    color: #c9154b;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+} */
+.profile .name{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 220px;
+    height: 150px;
+    background: #c9154bbb;
+    border-radius: 20px;
+    margin-left: 50px;
+}
+
+.profile .post .avatar{
+    height: 30px;
+    vertical-align: middle;
+}
+.profile .post span{
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+.profile .post{
+    margin: 20px 0;
+}
