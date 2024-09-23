@@ -6,14 +6,10 @@ function Messages(props){
     return(
         <div className="messages">
             <div className="users">
-                <User user = {props.userName1} />
-                <User user = {props.userName2} />
-                <User user = {props.userName3} />
+                {props.dialogData.messUsers.map((e)=><User user = {e.name} id = {e.id}/>)}
             </div>
             <div className="messageContainer">
-                <Message message = "Привет, как дела?"/>
-                <Message message = "Го завтра на Марс?"/>
-                <Message message = "Жду мой новый чип"/>
+                {props.dialogData.messItems.map((e)=><Message message = {e.mess} id = {e.id}/>)}
                 <textarea placeholder="введите сообщение"></textarea>
                 <button>send</button>
             </div>

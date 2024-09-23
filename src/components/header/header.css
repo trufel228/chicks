@@ -24,6 +24,7 @@
     margin-right: 340px;
     position: relative;
     z-index: 10;
+    transition: 0.3s;
 }
 .mainTitle{
     position: absolute;
@@ -36,4 +37,8 @@
     left: 150px;
     rotate: -10deg;
     color: #7c7b7b;
+}
+.header img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 4px #ffa0fa);
 }

@@ -6,7 +6,7 @@ import Messages from "./components/messages/messages"
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <div className='container'>
       <BrowserRouter>
@@ -14,8 +14,9 @@ function App() {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path = "/profile" element = {<Profile />} />
-            <Route path = '/messages' element = {<Messages userName1 = "Иван Иванов" userName2 = "Дональд Трамп" userName3 = "Билл Гейтс" />} />
+            <Route path = "/" element = {<Profile profileData = {props.state.profileData} />} />
+            <Route path = "/profile" element = {<Profile profileData = {props.state.profileData} />} />
+            <Route exact = {false} path = '/messages' element = {<Messages dialogData = {props.state.dialogData}/>} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -50,3 +50,36 @@
 .profile .post{
     margin: 20px 0;
 }
+.profile .post p{
+    width: max-content;
+}
+.profile .likes{
+    display: block;
+    text-align: end;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    right: 26px;
+}
+.profile .likes::before{
+    content: "";
+    position: absolute;
+    right: -17px;
+    top: 5px;
+    width: 12px;
+    height: 20px;
+    background: #b63d3d;
+    transform: rotate(-45deg);
+    border-radius: 10px 10px 0 0;
+}
+.profile .likes::after{
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 5px;
+    width: 12px;
+    height: 20px;
+    background: #b63d3d;
+    transform: rotate(45deg);
+    border-radius: 10px 10px 0 0;
+}

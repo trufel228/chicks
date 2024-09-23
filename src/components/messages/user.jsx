@@ -1,6 +1,8 @@
+import { NavLink } from "react-router-dom"
+
 function User(props){
     return(
-        <a>{props.user}</a>
+        <NavLink to = {`/messages/${props.id}`}>{props.user}</NavLink>
     )
 }
 export default User
