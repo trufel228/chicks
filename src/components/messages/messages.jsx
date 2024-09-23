@@ -1,8 +1,13 @@
+import React from "react"
 import Message from "./message"
 import "./messages.css"
 import User from "./user"
+let messText = React.createRef()
 
 function Messages(props){
+    let addMess = ()=>{
+        props.addMess(messText.current.value)
+    }
     return(
         <div className="messages">
             <div className="users">
@@ -10,8 +15,8 @@ function Messages(props){
             </div>
             <div className="messageContainer">
                 {props.dialogData.messItems.map((e)=><Message message = {e.mess} id = {e.id}/>)}
-                <textarea placeholder="введите сообщение"></textarea>
-                <button>send</button>
+                <textarea placeholder="введите сообщение" ref={messText}></textarea>
+                <button onClick={addMess}>send</button>
             </div>
         </div>
     )

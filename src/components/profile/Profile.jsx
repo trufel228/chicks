@@ -13,7 +13,7 @@ function Profile(props) {
           </div>
         </div>
 
-        <Posts profileData = {props.profileData} />
+        <Posts profileData = {props.profileData} addPost = {props.addPost}/>
       </div>
     )
   }

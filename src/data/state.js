@@ -27,3 +27,17 @@ let state = {
     } 
 };
 export default state
+
+export let addPost = (text)=>{
+  let newPost = {
+    id: 1488, mess: text, likes: 0
+  }
+  state.profileData.postItems.push(newPost)
+}
+
+export let addMess = (text)=>{
+  let newMess = {
+    id: 1488, mess: text,
+  }
+  state.dialogData.messItems.push(newMess)
+}
