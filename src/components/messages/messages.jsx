@@ -6,7 +6,10 @@ let messText = React.createRef()
 
 function Messages(props){
     let addMess = ()=>{
-        props.addMess(messText.current.value)
+        props.addMess()
+    }
+    let changeMess = ()=>{
+        props.changeMess(messText.current.value)
     }
     return(
         <div className="messages">
@@ -15,7 +18,7 @@ function Messages(props){
             </div>
             <div className="messageContainer">
                 {props.dialogData.messItems.map((e)=><Message message = {e.mess} id = {e.id}/>)}
-                <textarea placeholder="введите сообщение" ref={messText}></textarea>
+                <textarea placeholder="введите сообщение" ref={messText} onChange={changeMess} value = {props.dialogData.newMessText}></textarea>
                 <button onClick={addMess}>send</button>
             </div>
         </div>

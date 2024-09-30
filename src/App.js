@@ -14,9 +14,9 @@ function App(props) {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path = "/" element = {<Profile profileData = {props.state.profileData} addPost = {props.addPost} />} />
-            <Route path = "/profile" element = {<Profile profileData = {props.state.profileData} addPost = {props.addPost} />} />
-            <Route exact = {false} path = '/messages' element = {<Messages dialogData = {props.state.dialogData} addMess = {props.addMess}/>} />
+            <Route path = "/" element = {<Profile profileData = {props.state.profileData} addPost = {props.addPost} changePost = {props.changePost} />} />
+            <Route path = "/profile" element = {<Profile profileData = {props.state.profileData} addPost = {props.addPost} changePost = {props.changePost} />} />
+            <Route exact = {false} path = '/messages' element = {<Messages dialogData = {props.state.dialogData} addMess = {props.addMess} changeMess = {props.changeMess}/>} />
           </Routes>
         </div>
       </BrowserRouter>
