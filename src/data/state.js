@@ -1,3 +1,5 @@
+import { act } from "react";
+
 let store = {
   _state: {
     profileData: {
@@ -41,34 +43,29 @@ let store = {
     this.reRender = observer;
   },
   getState() {
-    return this._state
+    return this._state;
   },
-  addPost() {
-    let newPost = {
-      id: 1488,
-      mess: this._state.profileData.newPostText,
-      likes: 0,
-    };
-    this._state.profileData.postItems.unshift(newPost);
-    this._state.profileData.newPostText = "";
-    this.reRender(this._state);
-  },
-  changePost(text) {
-    this._state.profileData.newPostText = text;
-    this.reRender(this._state);
-  },
-
-  addMess() {
-    let newMess = {
-      id: 1488,
-      mess: this._state.dialogData.newMessText,
-    };
-    this._state.dialogData.messItems.push(newMess);
-    this._state.dialogData.newMessText = "";
-    this.reRender(this._state);
-  },
-  changeMess(text) {
-    this._state.dialogData.newMessText = text;
+  dispatch(action) {
+    if (action.type == "ADD_POST") {
+      let newPost = {
+        id: 1488,
+        mess: this._state.profileData.newPostText,
+        likes: 0,
+      };
+      this._state.profileData.postItems.unshift(newPost);
+      this._state.profileData.newPostText = "";
+    } else if (action.type == "CHANGE_POST") {
+      this._state.profileData.newPostText = action.text;
+    } else if (action.type == "ADD_MESS") {
+      let newMess = {
+        id: 1488,
+        mess: this._state.dialogData.newMessText,
+      };
+      this._state.dialogData.messItems.push(newMess);
+      this._state.dialogData.newMessText = "";
+    } else if (action.type == "CHANGE_MESS") {
+      this._state.dialogData.newMessText = action.text;
+    }
     this.reRender(this._state);
   },
 };

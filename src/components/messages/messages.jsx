@@ -6,10 +6,10 @@ let messText = React.createRef()
 
 function Messages(props){
     let addMess = ()=>{
-        props.addMess()
+        props.dispatch({type: 'ADD_MESS'})
     }
     let changeMess = ()=>{
-        props.changeMess(messText.current.value)
+        props.dispatch({type: 'CHANGE_MESS', text: messText.current.value})
     }
     return(
         <div className="messages">

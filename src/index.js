@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 export default function reRender(state) {
   root.render(
     <React.StrictMode>
-      <App state = {state} addPost = {store.addPost.bind(store)} changePost = {store.changePost.bind(store)} addMess = {store.addMess.bind(store)} changeMess = {store.changeMess.bind(store)} />
+      <App state = {state} dispatch = {store.dispatch.bind(store)} />
     </React.StrictMode>
   );
 }

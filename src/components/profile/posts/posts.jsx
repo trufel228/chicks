@@ -4,10 +4,10 @@ let postText = React.createRef()
 
 function Posts(props){
     let addPost = ()=>{
-        props.addPost()
+        props.dispatch({type: 'ADD_POST'})
     }
     let onChange = ()=>{
-        props.changePost(postText.current.value)
+        props.dispatch({type: 'CHANGE_POST', text: postText.current.value})
     }
     return(
         <div className="posts">
