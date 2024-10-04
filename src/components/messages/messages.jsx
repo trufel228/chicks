@@ -2,14 +2,15 @@ import React from "react"
 import Message from "./message"
 import "./messages.css"
 import User from "./user"
+import { addMessAC,changeMessAC } from "../../data/dialogReducer"
 let messText = React.createRef()
 
 function Messages(props){
     let addMess = ()=>{
-        props.dispatch({type: 'ADD_MESS'})
+        props.dispatch(addMessAC())
     }
     let changeMess = ()=>{
-        props.dispatch({type: 'CHANGE_MESS', text: messText.current.value})
+        props.dispatch(changeMessAC(messText.current.value))
     }
     return(
         <div className="messages">

@@ -1,4 +1,5 @@
-import { act } from "react";
+import messagesReducer from "./dialogReducer";
+import profileReducer from "./profileReducer";
 
 let store = {
   _state: {
@@ -46,26 +47,8 @@ let store = {
     return this._state;
   },
   dispatch(action) {
-    if (action.type == "ADD_POST") {
-      let newPost = {
-        id: 1488,
-        mess: this._state.profileData.newPostText,
-        likes: 0,
-      };
-      this._state.profileData.postItems.unshift(newPost);
-      this._state.profileData.newPostText = "";
-    } else if (action.type == "CHANGE_POST") {
-      this._state.profileData.newPostText = action.text;
-    } else if (action.type == "ADD_MESS") {
-      let newMess = {
-        id: 1488,
-        mess: this._state.dialogData.newMessText,
-      };
-      this._state.dialogData.messItems.push(newMess);
-      this._state.dialogData.newMessText = "";
-    } else if (action.type == "CHANGE_MESS") {
-      this._state.dialogData.newMessText = action.text;
-    }
+    this._state.profileData = profileReducer(this._state.profileData,action)
+    this._state.dialogData = messagesReducer(this._state.dialogData,action)
     this.reRender(this._state);
   },
 };

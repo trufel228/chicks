@@ -29,7 +29,7 @@ body{
 .content{
   grid-area: c;
   width: 100%;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 .container>*{
   background: #fcf8ea;
