@@ -1,7 +1,20 @@
 const ADD_MESS = "ADD_MESS"
 const CHANGE_MESS = "CHANGE_MESS"
 
-let messagesReducer = (state,action)=>{
+let initialData = {
+  messUsers: [
+    { id: 1, name: "Иван Иванов" },
+    { id: 2, name: "Дональд Трамп" },
+    { id: 3, name: "Билл Гейтс" },
+  ],
+  messItems: [
+    { id: 1, mess: "Привет, как дела?" },
+    { id: 2, mess: "Го завтра на Марс?" },
+    { id: 3, mess: "Жду мой новый чип" },
+  ],
+  newMessText: "",
+}
+let messagesReducer = (state = initialData,action)=>{
     if (action.type == ADD_MESS) {
         let newMess = {
           id: 1488,
